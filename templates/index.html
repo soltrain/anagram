@@ -1,0 +1,53 @@
+<!doctype html>
+<html>
+<head>
+	<title> Anagram?</title>
+</head>
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
+<body>
+	<h1>A Question</h1>
+	<em>
+		Words, online, tumbling<br>
+		Round and round, forwards, backwards<br>
+		Is forwards... backwards?
+	</em>
+	<form action="" method="post">
+		<p>
+			<input type="text" name="value1" maxlength="30" 
+			placeholder="First word" 
+			pattern="[a-zA-Z]+"
+			title="Words...only contain letters"
+			required />
+		</p>
+		<p>
+			<input type="text" name="value2" maxlength="30" 
+			placeholder="Second word" 
+			pattern="[a-zA-Z]+"
+			title="Words...only contain letters"
+			required/>
+		</p>
+		<p>
+			<button id="submit" type="button">Submit</button>
+			<!--<input type="Submit" value="Submit"> !-->
+		</p>
+	</form>
+<script>
+$(function() {
+    $('#submit').click(function() {
+ 
+        $.ajax({
+            url: '/',
+            data: $('form').serialize(),
+            type: 'POST',
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(error) {
+                console.log(error);
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>
