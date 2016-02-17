@@ -44,9 +44,9 @@ def process():
 	#print(calcAnagram(value1,value2))
 	
 	if calcAnagram(value1,value2) == 0:
-		return render_template('index.html', result = 'No, it is not.')
+		return render_template('index.html', result = 'No, no anagram here.')
 	else:
-		return render_template('index.html', result = 'Yes, indeed it is.')
+		return render_template('index.html', result = 'Yes, we have an anagram.')
 	
 	
 if __name__ == "__main__":
